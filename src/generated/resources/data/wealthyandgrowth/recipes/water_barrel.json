@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W",
+    "B"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "B": {
+      "tag": "forge:barrels/wooden"
+    }
+  },
+  "result": {
+    "item": "wealthyandgrowth:water_barrel"
+  }
+}

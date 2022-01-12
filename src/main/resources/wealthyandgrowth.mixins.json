@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "baguchan.wealthyandgrowth.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "wealthyandgrowth.refmap.json",
+  "mixins": [
+    "PatrolSpawnerMixin",
+    "AbstractIllagerMixin",
+    "VillagerMixin",
+    "WorkAtComposterMixin",
+    "VillagerGoalPackagesMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
