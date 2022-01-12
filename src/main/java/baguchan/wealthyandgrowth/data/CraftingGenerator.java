@@ -4,6 +4,8 @@ import baguchan.wealthyandgrowth.register.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
@@ -17,11 +19,8 @@ public class CraftingGenerator extends CraftingDataHelper {
 
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-		ShapedRecipeBuilder.shaped(ModBlocks.WATER_BARREL, 1)
-				.pattern("W")
-				.pattern("B")
-				.define('W', Items.WATER_BUCKET)
-				.define('B', Tags.Items.BARRELS_WOODEN)
+		ShapelessRecipeBuilder.shapeless(ModBlocks.WATER_BARREL, 1)
+				.requires(Tags.Items.BARRELS)
 				.unlockedBy("has_item", has(Blocks.BARREL)).save(consumer);
 
 	}

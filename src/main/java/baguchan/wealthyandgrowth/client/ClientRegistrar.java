@@ -3,9 +3,12 @@ package baguchan.wealthyandgrowth.client;
 import baguchan.wealthyandgrowth.register.ModBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -19,16 +22,13 @@ public class ClientRegistrar {
 	}
 
 	private static void renderBlockLayer() {
+		setRenderLayer(ModBlocks.WATER_BARREL, RenderType.cutout());
+	}
+
+	private static void setRenderLayer(Block block, RenderType type) {
+		ItemBlockRenderTypes.setRenderLayer(block, type::equals);
 	}
 
 	private static void renderBlockColor() {
-		Minecraft.getInstance().getBlockColors().register((p_92621_, p_92622_, p_92623_, p_92624_) -> {
-			return p_92622_ != null && p_92623_ != null ? BiomeColors.getAverageWaterColor(p_92622_, p_92623_) : -1;
-		}, ModBlocks.WATER_BARREL);
-
-		Minecraft.getInstance().getItemColors().register((p_92687_, p_92688_) -> {
-			BlockState blockstate = ((BlockItem) p_92687_.getItem()).getBlock().defaultBlockState();
-			return Minecraft.getInstance().getBlockColors().getColor(blockstate, (BlockAndTintGetter) null, (BlockPos) null, p_92688_);
-		}, ModBlocks.WATER_BARREL);
 	}
 }

@@ -21,7 +21,7 @@ public class BlockLootTables extends net.minecraft.data.loot.BlockLoot {
 
 	@Override
 	protected void addTables() {
-		this.dropSelf(ModBlocks.WATER_BARREL);
+		this.registerEmpty(ModBlocks.WATER_BARREL);
 	}
 
 	private void registerEmpty(Block b) {

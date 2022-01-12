@@ -36,7 +36,7 @@ public class HarvestPumpkinAndMelon extends Behavior<Villager> {
 	private final List<BlockPos> validFruitAroundVillager = Lists.newArrayList();
 
 	public HarvestPumpkinAndMelon() {
-		super(ImmutableMap.of(MemoryModuleType.LOOK_TARGET, MemoryStatus.VALUE_ABSENT, MemoryModuleType.WALK_TARGET, MemoryStatus.VALUE_ABSENT, MemoryModuleType.SECONDARY_JOB_SITE, MemoryStatus.VALUE_PRESENT));
+		super(ImmutableMap.of(MemoryModuleType.LOOK_TARGET, MemoryStatus.VALUE_ABSENT, MemoryModuleType.WALK_TARGET, MemoryStatus.VALUE_ABSENT));
 	}
 
 	protected boolean checkExtraStartConditions(ServerLevel p_23174_, Villager p_23175_) {
@@ -91,7 +91,7 @@ public class HarvestPumpkinAndMelon extends Behavior<Villager> {
 	}
 
 	protected void tick(ServerLevel p_23196_, Villager p_23197_, long p_23198_) {
-		if (this.aboveFruitPos == null || this.aboveFruitPos.closerThan(p_23197_.position(), 2.5D)) {
+		if (this.aboveFruitPos != null && this.aboveFruitPos.closerThan(p_23197_.position(), 2.5D)) {
 			if (this.aboveFruitPos != null && p_23198_ > this.nextOkStartTime) {
 				BlockState blockstate = p_23196_.getBlockState(this.aboveFruitPos);
 				Block block = blockstate.getBlock();

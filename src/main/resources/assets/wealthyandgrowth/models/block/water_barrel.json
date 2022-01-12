@@ -1,8 +1,56 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
+  "parent": "block/block",
   "textures": {
-    "top": "wealthyandgrowth:block/barrel_top_water",
+    "water": "wealthyandgrowth:block/barrel_top_water",
+    "top": "wealthyandgrowth:block/barrel_top",
     "bottom": "minecraft:block/barrel_bottom",
-    "side": "minecraft:block/barrel_side"
-  }
+    "side": "minecraft:block/barrel_side",
+    "inside": "minecraft:block/barrel_bottom",
+    "particle": "#side"
+  },
+  "elements": [
+    {   "from": [ 0, 0, 0 ],
+      "to": [ 16, 2, 16 ],
+      "faces": {
+        "up":    { "texture": "#inside" },
+        "down":  { "texture": "#bottom", "cullface": "down" }
+      }
+    },
+    {   "from": [ 0, 0, 0 ],
+      "to": [ 2, 16, 16 ],
+      "faces": {
+        "up":    { "texture": "#top", "cullface": "up" },
+        "north": { "texture": "#side", "cullface": "north" },
+        "south": { "texture": "#side", "cullface": "south" },
+        "west":  { "texture": "#side", "cullface": "west" },
+        "east":  { "texture": "#side" }
+      }
+    },
+    {   "from": [ 14, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "up":    { "texture": "#top", "cullface": "up" },
+        "north": { "texture": "#side", "cullface": "north" },
+        "south": { "texture": "#side", "cullface": "south" },
+        "west":  { "texture": "#side" },
+        "east":  { "texture": "#side", "cullface": "east" }
+      }
+    },
+    {   "from": [ 2, 0, 0 ],
+      "to": [ 14, 16, 2 ],
+      "faces": {
+        "up":    { "texture": "#top", "cullface": "up" },
+        "north": { "texture": "#side", "cullface": "north" },
+        "south": { "texture": "#side" }
+      }
+    },
+    {   "from": [ 2, 0, 14 ],
+      "to": [ 14, 16, 16 ],
+      "faces": {
+        "up":    { "texture": "#top", "cullface": "up" },
+        "north": { "texture": "#side" },
+        "south": { "texture": "#side", "cullface": "south" }
+      }
+    }
+  ]
 }
