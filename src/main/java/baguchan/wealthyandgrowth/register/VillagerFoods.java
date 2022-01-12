@@ -1,6 +1,7 @@
 package baguchan.wealthyandgrowth.register;
 
-import com.google.common.collect.*;
+import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
