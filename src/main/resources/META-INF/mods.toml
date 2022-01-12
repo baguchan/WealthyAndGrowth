@@ -34,7 +34,7 @@ credits="" #optional
 authors="bagu_chan" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-This mod add more unique for Villager!
+This mod add more unique tweek for Villager or your Village life!
 also Tweeked Villager more safety!
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
